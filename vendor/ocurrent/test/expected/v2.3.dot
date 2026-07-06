@@ -1,0 +1,22 @@
+digraph pipeline {
+  graph [fontname="ui-system,sans-serif",bgcolor="transparent"]
+  node [fontname="ui-system,sans-serif",shape="box"]
+  edge [fontname="ui-system,sans-serif"]
+  rankdir=LR
+  n3 [label="current-test",color="#90ee90",fillcolor="#90ee90",style="filled",tooltip=" "]
+  n2 [label="choose pipeline",color="#90ee90",fillcolor="#90ee90",style="filled",tooltip=" "]
+  n8 [label="head",color="#90ee90",fillcolor="#90ee90",style="filled",tooltip=" "]
+  n7 [label="fetch",color="#90ee90",fillcolor="#90ee90",style="filled",tooltip=" "]
+  n6 [label="build",color="#90ee90",fillcolor="#90ee90",style="filled",tooltip=" "]
+  n5 [label="docker run make test",color="#90ee90",fillcolor="#90ee90",style="filled",tooltip=" "]
+  n4 [label="",color="#90ee90",fillcolor="#90ee90",style="filled",shape="circle",tooltip=" "]
+  n1 [label="docker push foo/bar",color="#4975ff",fillcolor="#4975ff",style="filled",tooltip=" "]
+  n4 -> n1
+  n6 -> n4
+  n5 -> n4 [style="dashed"]
+  n6 -> n5
+  n7 -> n6
+  n8 -> n7
+  n2 -> n8
+  n3 -> n2
+  }

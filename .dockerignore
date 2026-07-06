@@ -8,3 +8,6 @@
 **/*.cap
 docker-compose.yml
 Dockerfile
+
+# host-only vendored ocurrent (Dockerfile uses the github pin instead)
+vendor
